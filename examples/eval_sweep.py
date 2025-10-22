@@ -81,7 +81,7 @@ acc_train_epoch = []
 with open("data.csv", "w") as csvfile:
     writer = csv.writer(csvfile)
 
-for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSAX1_5', 'SSAX2_5', 'SSAX3_5', 'SAID1_5', 'SAID2_5', 'NC_5', 'NCp_5']:
+for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSAX1_5', 'SSAX2_5', 'SSAX3_5', 'SAID1_5', 'SAID2_5', 'NC_5', 'NCp_5', 'ApprOchs']:
 
 
     #Step 4: Loading the ResNet18 Network for evaluation
