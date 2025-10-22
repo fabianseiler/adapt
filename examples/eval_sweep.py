@@ -163,7 +163,7 @@ for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSA
     print('Accuracy of the network on the 10000 test images: %.4f %%' % (
         100 * correct / total))
     acc_train_epoch.append(correct/total)
-    writer.writerow(f"{axx_mult}, {correct/total}")
+    writer.writerow(f"{axx_mult}, 0, {correct/total}")
 
     #Step 8: Run approximate-aware re-training
     #############################################################################
@@ -197,5 +197,6 @@ for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSA
         100 * correct / total))
     acc_sweep.append(correct/total)
     print(f"Accuracy: {acc_sweep}")
+    writer.writerow(f"{axx_mult}, 15, {correct / total}")
 
 print(acc_sweep)
