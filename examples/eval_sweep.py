@@ -78,9 +78,6 @@ data_t = DataLoader(trainset_1, batch_size=128, shuffle=False, num_workers=0)
 acc_sweep = []
 acc_train_epoch = []
 
-with open("data.csv", "w") as csvfile:
-    writer = csvfile.writer(csvfile)
-
 for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSAX1_5', 'SSAX2_5', 'SSAX3_5', 'SAID1_5', 'SAID2_5', 'NC_5', 'NCp_5', 'ApprOchs']:
 
 
@@ -163,7 +160,6 @@ for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSA
     print('Accuracy of the network on the 10000 test images: %.4f %%' % (
         100 * correct / total))
     acc_train_epoch.append(correct/total)
-    writer.writerow(f"{axx_mult}, 0, {correct/total}")
 
     #Step 8: Run approximate-aware re-training
     #############################################################################
@@ -197,6 +193,5 @@ for axx_mult in ['SIAFA1_5', 'SIAFA2_5', 'SIAFA3_5', 'SIAFA4_5', 'SAFAN_5', 'SSA
         100 * correct / total))
     acc_sweep.append(correct/total)
     print(f"Accuracy: {acc_sweep}")
-    writer.writerow(f"{axx_mult}, 15, {correct / total}")
 
 print(acc_sweep)
